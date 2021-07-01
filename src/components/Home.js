@@ -4,7 +4,7 @@ import Cookie from "js-cookie"
 import { Skeleton } from 'antd';
 import { Layout } from 'antd';
 import { useState, useEffect } from 'react';
-import { Select, Form, Input, DatePicker, TimePicker, Col, Button, List, Row, Steps, message, Menu, Modal , PageHeader} from 'antd';
+import {Alert,  Select, Form, Input, DatePicker, TimePicker, Col, Button, List, Row, Steps, message, Menu, Modal , PageHeader} from 'antd';
 import { MinusCircleOutlined, PlusOutlined, SearchOutlined } from '@ant-design/icons';
 import { Tabs, Radio, Space, Breadcrumb, Table, Tag, Drawer, Message, Popover } from 'antd';
 import { useHistory, Redirect } from "react-router-dom";
@@ -625,6 +625,7 @@ const handleReset = clearFilters => {
                 <Layout className="site-layout-background" style={{ padding: '0px 0', height: 800 }}>
                     { /*<Sidebar />*/}
                     <Content className="centerdiv" style={{ paddingLeft: 100, backgroundColor: "#fff", paddingRight: 100 }} >
+                    <Alert message="To add new category click (create new) then hover over category, likewise for attributes" type="info" style={{ marginTop: 40 }} />
                         <div className="fullwidth" style={{ paddingTop: 40 }}>
                             <div style={{ paddingBottom: 40 }}>
                                 <Button type="primary" onClick={showModal}>Create New</Button>
