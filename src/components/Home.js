@@ -4,7 +4,7 @@ import Cookie from "js-cookie"
 import { Skeleton } from 'antd';
 import { Layout } from 'antd';
 import { useState, useEffect } from 'react';
-import { Select, Form, Input, DatePicker, TimePicker, Col, Button, List, Row, Steps, message, Menu, Modal } from 'antd';
+import { Select, Form, Input, DatePicker, TimePicker, Col, Button, List, Row, Steps, message, Menu, Modal , PageHeader} from 'antd';
 import { MinusCircleOutlined, PlusOutlined, SearchOutlined } from '@ant-design/icons';
 import { Tabs, Radio, Space, Breadcrumb, Table, Tag, Drawer, Message, Popover } from 'antd';
 import { useHistory, Redirect } from "react-router-dom";
@@ -175,25 +175,6 @@ const handleReset = clearFilters => {
             console.log(error)
         })
 
-
-        /*const mary = {
-            name: values.name,
-            category: values.category,
-            size: values.size,
-            color: values.color
-        }
-
-        fetch("https://localhost:5001/products", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
-            },
-            body: JSON.stringify(mary)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-            });*/
     };
 
     const onFinishdrawer = (values) => {
@@ -228,7 +209,7 @@ const handleReset = clearFilters => {
         const formData = new URLSearchParams();
         formData.append('name', values.name);
 
-        fetch("https://localhost:5001/productCategories", {
+        fetch("https://localhost:5001/productCategory", {
             method: "POST",
             body: formData.toString(),
             headers: {
@@ -628,9 +609,18 @@ const handleReset = clearFilters => {
                     </Form>
                 </Modal>
 
+                <PageHeader
+                style={{ marginTop: 40 }}
+    className="site-page-header"
+    onBack={() => null}
+    title="Project Demo"
+    subTitle="This is everything in one package"
+  />
+                
+
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item>Home</Breadcrumb.Item>
-                    <Breadcrumb.Item>Tenders</Breadcrumb.Item>
+                    <Breadcrumb.Item>Products</Breadcrumb.Item>
                 </Breadcrumb>
                 <Layout className="site-layout-background" style={{ padding: '0px 0', height: 800 }}>
                     { /*<Sidebar />*/}
